@@ -461,6 +461,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Set the current date for the last update
+    const updateDateElement = document.getElementById('update-date');
+    if (updateDateElement) {
+        const now = new Date();
+        
+        // Array of Arabic month names
+        const arabicMonths = [
+            "يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو",
+            "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"
+        ];
+        
+        // Format the date as "Day Month Year" in Arabic
+        const day = now.getDate();
+        const month = arabicMonths[now.getMonth()];
+        const year = now.getFullYear();
+        
+        updateDateElement.textContent = `${day} ${month} ${year}`;
+    }
 });
 
 // Add some interactive features

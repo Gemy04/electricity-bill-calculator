@@ -125,6 +125,22 @@ body::before {
     z-index: 2;
 }
 
+.last-update {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 12px;
+    border-radius: 15px;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+}
+
+#update-date {
+    font-weight: bold;
+}
+
 .electricity-icon {
     font-size: 4rem;
     margin-bottom: 20px;
