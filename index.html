@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حاسبة فاتورة الكهرباء</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+
+    <div class="notification" id="notification">تم حفظ الحساب بنجاح! ✅</div>
+
+    <div class="container">
+        <div class="header">
+            <span class="electricity-icon">⚡</span>
+            <h1>حاسبة فاتورة الكهرباء</h1>
+            <p>احسب تكلفة استهلاك الكهرباء حسب أسعار أبريل 2024</p>
+        </div>
+
+        <div class="content">
+            <div class="calculation-methods">
+                <div class="method-card active" onclick="selectMethod('exact')">
+                    <h3>الاستهلاك المحدد</h3>
+                    <p>أدخل كمية الاستهلاك مباشرة</p>
+                </div>
+                <div class="method-card" onclick="selectMethod('readings')">
+                    <h3>القراءات</h3>
+                    <p>أدخل القراءة السابقة والحالية</p>
+                </div>
+            </div>
+
+            <div id="exact-method">
+                <div class="form-group">
+                    <label for="exact-usage">الاستهلاك (كيلو وات ساعة)</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="exact-usage" placeholder="أدخل كمية الاستهلاك">
+                        <span class="input-icon">⚡</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="readings-method" class="hidden">
+                <div class="form-group">
+                    <label for="previous-reading">القراءة السابقة</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="previous-reading" placeholder="أدخل القراءة السابقة">
+                        <span class="input-icon">📊</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="current-reading">القراءة الحالية</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="current-reading" placeholder="أدخل القراءة الحالية">
+                        <span class="input-icon">📈</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="consumption-tips">
+                <h4>💡 نصائح لتوفير الكهرباء</h4>
+                <ul class="tips-list">
+                    <li>استخدم مصابيح LED بدلاً من المصابيح العادية</li>
+                    <li>اضبط المكيف على 24 درجة مئوية</li>
+                    <li>افصل الأجهزة عند عدم الاستخدام</li>
+                    <li>استخدم الغسالة بحمولة كاملة</li>
+                </ul>
+            </div>
+
+            <button class="calculate-btn" onclick="calculateBill()">احسب الفاتورة</button>
+
+            <div id="result" class="result">
+                <h3>نتيجة الحساب</h3>
+                <div class="total-cost" id="total-cost">0 ج.م</div>
+                <p>إجمالي تكلفة الاستهلاك</p>
+                <div class="breakdown" id="breakdown"></div>
+                
+                <div class="environmental-impact" id="environmental-impact" style="display: none;">
+                    <h4>🌍 التأثير البيئي</h4>
+                    <div class="co2-info" id="co2-info"></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="savings-calculator">
+                <h4>💰 حاسبة التوفير</h4>
+                <p style="text-align: center; margin-bottom: 15px; color: #4a5568;">كم ستوفر إذا قللت استهلاكك؟</p>
+                <div class="savings-input">
+                    <input type="number" id="target-reduction" placeholder="نسبة التوفير المطلوبة (%)">
+                    <button class="savings-btn" onclick="calculateSavings()">احسب التوفير</button>
+                </div>
+                <div class="savings-result" id="savings-result" style="display: none;"></div>
+            </div>
+
+            <div class="history">
+                <h3>سجل الحسابات السابقة</h3>
+                <div id="history-list"></div>
+                <button class="clear-history" onclick="clearHistory()">مسح السجل</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
