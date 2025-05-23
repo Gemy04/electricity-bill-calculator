@@ -18,7 +18,7 @@ A web application for calculating electricity bills according to Egypt's April 2
 
 ## Live Demo
 
-Visit the live application: [Electricity Bill Calculator](https://YOUR_USERNAME.github.io/elc-cal/)
+Visit the live application: [Electricity Bill Calculator](https://gemy04.github.io/electricity-bill-calculator/)
 
 ## How to Use
 
