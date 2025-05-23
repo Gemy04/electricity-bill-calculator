@@ -29,4 +29,8 @@ Visit the live application: [Electricity Bill Calculator](https://gemy04.github.
 
 ## Screenshots
 
-(Add screenshots here) 
+### Screenshot 1
+![Calculator Screenshot 1](./images/Screenshot_24-5-2025_23621_gemy04.github.io.jpeg)
+
+### Screenshot 2
+![Calculator Screenshot 2](./images/screenshot-1748043357239.png)
