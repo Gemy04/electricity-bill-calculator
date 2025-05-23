@@ -663,52 +663,119 @@ body::before {
     }
     
     .result {
-        padding: 20px;
+        padding: 18px 15px;
         border-radius: 15px;
         margin-bottom: 20px;
     }
     
     .total-cost {
         font-size: 2.2rem;
+        margin: 5px 0;
+        line-height: 1.2;
     }
     
     .breakdown {
-        padding: 15px;
+        padding: 12px;
+        margin-top: 15px;
     }
-
+    
     .tier {
-        padding: 6px 0;
+        padding: 8px 0;
+        font-size: 0.95rem;
     }
-
+    
+    .tier:last-child {
+        font-size: 1rem;
+        padding-top: 10px;
+    }
+    
+    .result h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    
+    .result p {
+        margin: 5px 0;
+        font-size: 0.9rem;
+    }
+    
+    .environmental-impact {
+        padding: 15px 12px;
+        margin: 15px 0;
+    }
+    
+    .co2-info {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+    
+    .environmental-impact h4 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    
     .electricity-icon {
         font-size: 2.5rem;
         margin-bottom: 10px;
     }
-
+    
     .savings-calculator {
-        padding: 20px;
+        padding: 18px 15px;
         border-radius: 15px;
         margin: 20px 0;
     }
-
+    
+    .savings-calculator h4 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
     .savings-input {
         flex-direction: column;
         gap: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .savings-input input {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+        border-radius: 8px;
     }
     
     .savings-btn {
         width: 100%;
         padding: 12px;
+        font-size: 0.95rem;
     }
     
-    .environmental-impact {
-        padding: 15px;
-        margin: 15px 0;
+    .savings-result {
+        padding: 12px;
+        font-size: 1rem;
+        margin-top: 8px;
     }
     
     .history {
-        padding: 20px;
+        padding: 18px 15px;
         margin-top: 20px;
+        border-radius: 12px;
+    }
+    
+    .history h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .history-item {
+        padding: 12px;
+        margin-bottom: 8px;
+        border-radius: 6px;
+        font-size: 0.95rem;
+    }
+    
+    .clear-history {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+        margin-top: 12px;
     }
     
     .notification {
@@ -731,7 +798,7 @@ body::before {
     }
     
     .total-cost {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .content {
@@ -743,7 +810,53 @@ body::before {
     }
     
     .tier-info {
-        padding: 15px;
+        padding: 12px;
+        font-size: 0.95rem;
+        margin: 12px 0;
+    }
+    
+    .result {
+        padding: 15px 10px;
+    }
+    
+    .result h3 {
+        font-size: 1.2rem;
+    }
+    
+    .environmental-impact {
+        padding: 12px 10px;
+    }
+    
+    .tier {
+        font-size: 0.9rem;
+    }
+    
+    .breakdown {
+        padding: 10px;
+    }
+    
+    .savings-calculator {
+        padding: 15px 12px;
+    }
+    
+    .savings-calculator h4 {
         font-size: 1rem;
+    }
+    
+    .savings-input input {
+        padding: 8px 10px;
+    }
+    
+    .savings-btn {
+        padding: 10px;
+    }
+    
+    .history {
+        padding: 15px 12px;
+    }
+    
+    .history-item {
+        padding: 10px;
+        font-size: 0.9rem;
     }
 }
