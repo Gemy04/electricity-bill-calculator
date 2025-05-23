@@ -595,28 +595,155 @@ body::before {
 }
 
 @media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        border-radius: 15px;
+    }
+    
     .calculation-methods {
         flex-direction: column;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .method-card {
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+    
+    .method-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .header {
+        padding: 25px 20px;
     }
     
     .header h1 {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .header p {
+        font-size: 1rem;
     }
     
     .content {
+        padding: 20px 15px;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .form-group input {
+        padding: 14px 45px 14px 14px;
+        font-size: 1rem;
+        border-radius: 12px;
+    }
+    
+    .consumption-tips {
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 12px;
+    }
+    
+    .consumption-tips h4 {
+        font-size: 1rem;
+    }
+    
+    .calculate-btn {
+        padding: 18px;
+        font-size: 1.1rem;
+        border-radius: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .result {
         padding: 20px;
+        border-radius: 15px;
+        margin-bottom: 20px;
     }
     
     .total-cost {
-        font-size: 2.8rem;
+        font-size: 2.2rem;
+    }
+    
+    .breakdown {
+        padding: 15px;
+    }
+
+    .tier {
+        padding: 6px 0;
     }
 
     .electricity-icon {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .savings-calculator {
+        padding: 20px;
+        border-radius: 15px;
+        margin: 20px 0;
     }
 
     .savings-input {
         flex-direction: column;
         gap: 10px;
+    }
+    
+    .savings-btn {
+        width: 100%;
+        padding: 12px;
+    }
+    
+    .environmental-impact {
+        padding: 15px;
+        margin: 15px 0;
+    }
+    
+    .history {
+        padding: 20px;
+        margin-top: 20px;
+    }
+    
+    .notification {
+        padding: 12px 15px;
+        top: 10px;
+        right: 10px;
+        max-width: calc(100% - 20px);
+        font-size: 0.9rem;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .electricity-icon {
+        font-size: 2.2rem;
+    }
+    
+    .total-cost {
+        font-size: 2rem;
+    }
+    
+    .content {
+        padding: 15px 12px;
+    }
+    
+    .form-group label {
+        font-size: 1rem;
+    }
+    
+    .tier-info {
+        padding: 15px;
+        font-size: 1rem;
     }
 }
