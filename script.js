@@ -507,6 +507,12 @@ function addSparkleEffect(element) {
     }, 600);
 }
 
+// today date using js automatically
+const todayDate = new Date();
+const todayDateElement = document.getElementById('update-date');
+todayDateElement.textContent = todayDate.toLocaleDateString('ar-EG');
+
+
 // Add sparkle animation CSS
 const sparkleStyle = document.createElement('style');
 sparkleStyle.textContent = `
