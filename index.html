@@ -6,6 +6,13 @@
     <title>حاسبة فاتورة الكهرباء</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://unpkg.com/@pdf-lib/fontkit@1.1.1/dist/fontkit.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pdfmake@0.2.7/build/pdfmake.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pdfmake@0.2.7/build/vfs_fonts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="floating-elements">
@@ -18,6 +25,12 @@
 
     <div class="container">
         <div class="header">
+            <div class="theme-toggle" onclick="toggleTheme()">
+                <span class="theme-icon" id="theme-icon">🌞</span>
+            </div>
+            <div class="lang-toggle" onclick="toggleLanguage()">
+                <span id="language-text">English</span>
+            </div>
             <span class="electricity-icon">⚡</span>
             <h1>حاسبة فاتورة الكهرباء</h1>
             <p>احسب تكلفة استهلاك الكهرباء حسب أسعار أبريل 2024</p>
@@ -82,12 +95,19 @@
                 <div class="breakdown" id="breakdown"></div>
                 
                 <div class="environmental-impact" id="environmental-impact" style="display: none;">
-                    <h4>🌍 التأثير البيئي</h4>
+                    <h4>🌍 Environmental Impact</h4>
                     <div class="co2-info" id="co2-info"></div>
                     <div class="progress-bar">
                         <div class="progress-fill" id="progress-fill"></div>
                     </div>
                 </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="export-btn" onclick="exportToPDF()">
+                    <span class="export-icon">📄</span>
+                    تصدير كملف PDF
+                </button>
             </div>
 
             <div class="savings-calculator">
@@ -102,8 +122,29 @@
 
             <div class="history">
                 <h3>سجل الحسابات السابقة</h3>
+                <div class="history-actions">
+                    <button class="history-btn" onclick="exportHistory()">
+                        <span class="history-btn-icon">📤</span>
+                        تصدير السجل (Excel)
+                    </button>
+                    <button class="history-btn" onclick="exportHistoryToPDF()">
+                        <span class="history-btn-icon">📄</span>
+                        تصدير السجل (PDF)
+                    </button>
+                    <label for="import-history" class="history-btn">
+                        <span class="history-btn-icon">📥</span>
+                        استيراد السجل (Excel)
+                    </label>
+                    <input type="file" id="import-history" accept=".xlsx,.xls,.csv" style="display: none;" onchange="importHistory(event)">
+                    <button class="clear-history" onclick="clearHistory()">
+                        <span class="history-btn-icon">🗑️</span>
+                        مسح السجل
+                    </button>
+                </div>
                 <div id="history-list"></div>
-                <button class="clear-history" onclick="clearHistory()">مسح السجل</button>
+                <div class="consumption-chart">
+                    <canvas id="monthlyChart"></canvas>
+                </div>
             </div>
         </div>
     </div>
